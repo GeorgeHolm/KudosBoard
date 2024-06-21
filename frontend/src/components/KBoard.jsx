@@ -5,6 +5,7 @@ import "./KBoard.css";
 import propTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import defaultImage from "../assets/default.png";
 
 
 const KBoard = (props) => {
@@ -20,7 +21,7 @@ const KBoard = (props) => {
 
   return (
     <div className="kboard">
-      <img src="src/assets/default.png" />
+      <img src={defaultImage} />
       <h2>{props.features.title}</h2>
       <p>{props.features.author}</p>
       <p>{props.features.type}</p>
