@@ -1,0 +1,50 @@
+#large-container {
+    display: flex;
+  }
+
+  #boards {
+    font-family: Georgia, "Times New Roman", Times, serif;
+
+    width: 100%;
+  
+  }
+
+  button {
+    margin: 5px;
+  }
+
+
+  .flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .close-btn {
+    float: right;
+  }
+
+  .submit {
+    background-color: teal;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+}
+  .new-board-form {
+
+    background-color: #fff;
+    box-shadow: 0 4px 8px #0000001a;
+    left: 50%;
+    max-width: 400px;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1000;
+    z-index: 1001;
+}
