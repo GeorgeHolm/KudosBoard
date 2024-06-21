@@ -1,0 +1,24 @@
+.kboard {
+    max-width: 55%;
+    width: 200px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    border: solid 1px grey;
+    margin: 1%;
+    box-shadow: 10px 5px 5px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+
+
+.kboard button {
+    font-size: 10px;
+}
+
+.kboard img {
+    width: 200px;
+    height: 150px;
+}
