@@ -35,7 +35,7 @@ const Details = (props) => {
 
   console.log("details fetch: " + fetcher); //why do i need this console.log for everything to update?
   useEffect(() => {
-    fetch(`http://localhost:3000/boards/${props.board?.id}/cards`)
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards/${props.board?.id}/cards`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -56,7 +56,7 @@ const Details = (props) => {
 
 
   const setDetails = () => {
-    fetch(`http://localhost:3000/boards/${props.board?.id}/cards`, {
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards/${props.board?.id}/cards`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

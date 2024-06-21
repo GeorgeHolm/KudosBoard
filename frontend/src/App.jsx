@@ -31,7 +31,7 @@ function App() {
   // }, [user]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/boards")
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

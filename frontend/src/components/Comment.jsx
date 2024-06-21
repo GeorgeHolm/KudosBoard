@@ -15,7 +15,7 @@ const Comment = (props) => {
     console.log("deleting comment");
     console.log(props.fetcher);
 
-    fetch(`http://localhost:3000/comments/${props.id}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/comments/${props.id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

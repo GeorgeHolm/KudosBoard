@@ -13,7 +13,7 @@ const Card = (props) => {
 
   useEffect(() => {
     console.log(fetcher);
-    fetch(`http://localhost:3000/boards/${props.card?.id}/comments`)
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards/${props.card?.id}/comments`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -31,7 +31,7 @@ const Card = (props) => {
   }, [fetcher]);
 
   const addLike = () => {
-    fetch(`http://localhost:3000/cards/${props.card.id}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/cards/${props.card.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -50,7 +50,7 @@ const Card = (props) => {
   const deleteCard = () => {
     console.log("deleting card");
 
-    fetch(`http://localhost:3000/cards/${props.card.id}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/cards/${props.card.id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -63,7 +63,7 @@ const Card = (props) => {
     setFetcher(fetcher + 1);
 
     console.log("key: " + props.card.id);
-    fetch(`http://localhost:3000/boards/${props.card.id}/comments`, {
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/${props.card.id}/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

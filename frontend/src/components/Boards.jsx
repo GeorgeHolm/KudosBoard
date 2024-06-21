@@ -20,7 +20,7 @@ const Boards = (props) => {
   useEffect(() => {
     console.log("Boards");
 
-    fetch("http://localhost:3000/boards")
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -64,7 +64,7 @@ const Boards = (props) => {
     ]);
 
     //attempting backend stuff
-    fetch("http://localhost:3000/boards", {
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const Boards = (props) => {
     console.log(index);
     setBoards(boards.filter((i) => i.id !== index));
 
-    fetch(`http://localhost:3000/boards/${index}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards/${index}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
