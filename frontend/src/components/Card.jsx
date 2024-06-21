@@ -63,7 +63,7 @@ const Card = (props) => {
     setFetcher(fetcher + 1);
 
     console.log("key: " + props.card.id);
-    fetch(`${import.meta.env.VITE_BACKEND_LINK}/${props.card.id}/comments`, {
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards/${props.card.id}/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
