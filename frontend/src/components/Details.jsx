@@ -101,7 +101,7 @@ const Details = (props) => {
 
     e.preventDefault();
 
-    const url = "http://api.giphy.com/v1/gifs/search?q=" + formGif + "&api_key=" + import.meta.env.VITE_API_KEY + "&limit=20";
+    const url = "https://api.giphy.com/v1/gifs/search?q=" + formGif + "&api_key=" + import.meta.env.VITE_API_KEY + "&limit=20";
     console.log("The url: " + url);
 
 
