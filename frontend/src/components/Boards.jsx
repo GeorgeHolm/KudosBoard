@@ -116,7 +116,7 @@ const Boards = (props) => {
       method: "DELETE",
     })
       .then((response) => response.json())
-      .then((data) => props.handleAll())//REPLACE CONSOLE LOG WITH PROPPED FETCH
+      .then(props.handleAll())//REPLACE CONSOLE LOG WITH PROPPED FETCH
       .catch((error) => console.error(error));
   };
 
