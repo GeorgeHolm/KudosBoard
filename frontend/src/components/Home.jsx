@@ -39,11 +39,11 @@ function Home(props) {
   }
 
 
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date());
+      setTime(time + 1);
       console.log(time);
       handleAll();
 
