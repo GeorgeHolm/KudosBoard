@@ -85,10 +85,11 @@ const Boards = (props) => {
     setOnOff({ display: "none" });
     props.setGetter(props.getter + 1); //passed from App to cause refresh
 
-    setTimeout(() => {
+    setTimeout(async () => {
       props.setGetter(props.getter + 1); //passed from App to cause refresh
-      props.handleAll()
-    }, 2000);
+      props.handleAll();
+      window.location.reload();
+    }, 500);
   };
 
   const exit = () => {
