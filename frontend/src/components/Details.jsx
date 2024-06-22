@@ -52,7 +52,7 @@ const Details = (props) => {
       });
   }, [fetcher]);
 
-
+  
 
 
   const setDetails = () => {
