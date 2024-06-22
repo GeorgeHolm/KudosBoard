@@ -36,7 +36,7 @@ const Boards = (props) => {
       .catch((error) => {
         console.error("Error fetching boards:", error);
       });
-  }, [onOff]);
+  }, [onOff, time]);
 
   const handleNewBoard = () => {
     if (onOff.display === "none") {
@@ -55,7 +55,7 @@ const Boards = (props) => {
       setTime(new Date());
     }, 1000);
     console.log(time);
-    
+
 
     return () => clearInterval(interval);
   }, []);
