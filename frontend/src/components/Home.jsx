@@ -43,14 +43,12 @@ function Home(props) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(time + 1);
-      console.log(time);
+      console.log('call');
       handleAll();
-
     }, 1000);
-
-
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
 
