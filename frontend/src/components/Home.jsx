@@ -39,7 +39,6 @@ function Home(props) {
   }
 
 
-  const [time, setTime] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
