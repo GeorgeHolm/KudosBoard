@@ -76,7 +76,7 @@ const Boards = (props) => {
       }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => props.handleAll())
       .catch((error) => console.error(error));
 
     setBoardIndex(boardIndex + 1);
@@ -116,7 +116,7 @@ const Boards = (props) => {
       method: "DELETE",
     })
       .then((response) => response.json())
-      .then(this.forceUpdate())//REPLACE CONSOLE LOG WITH PROPPED FETCH
+      .then((data) => props.handleAll())//REPLACE CONSOLE LOG WITH PROPPED FETCH
       .catch((error) => console.error(error));
   };
 
