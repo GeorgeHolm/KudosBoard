@@ -44,12 +44,16 @@ function Home(props) {
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date());
+      console.log(time);
+      handleAll();
+
     }, 1000);
 
-    handleAll();
 
     return () => clearInterval(interval);
   }, []);
+
+
   const handleRecent = () => { //ask about the recent page and how it is different from the others!
     console.log("Recent");
     setFilter("Recent");
