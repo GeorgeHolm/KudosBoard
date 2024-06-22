@@ -75,7 +75,7 @@ const Boards = (props) => {
         creator: formAuthor,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => response.json().then(props.handleAll))
       .then((data) => props.handleAll())
       .catch((error) => console.error(error));
 
