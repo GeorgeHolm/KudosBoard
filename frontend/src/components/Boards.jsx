@@ -48,6 +48,18 @@ const Boards = (props) => {
     console.log(onOff.display);
   };
 
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    console.log(time);
+    
+
+    return () => clearInterval(interval);
+  }, []);
+
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Creating New Board");

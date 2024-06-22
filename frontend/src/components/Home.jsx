@@ -17,27 +17,23 @@ function Home(props) {
   const handleAll = () => {
     console.log("All");
     setFilter("All");
-
-    setTimeout(async () => {
-      fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json(); // Parse JSON data from the response
-      })
-      .then(data => {
-        // Handle successful response
-        console.log('Boards:', data);
-      })
-      .catch(error => {
-        console.error('Error fetching boards:', error);
-      });
-      window.location.reload();
-    }, 500);
+    
 
 
-
+    fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json(); // Parse JSON data from the response
+    })
+    .then(data => {
+      // Handle successful response
+      console.log('Boards:', data);
+    })
+    .catch(error => {
+      console.error('Error fetching boards:', error);
+    });
 
 
   }
