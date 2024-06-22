@@ -36,7 +36,7 @@ const Boards = (props) => {
       .catch((error) => {
         console.error("Error fetching boards:", error);
       });
-  }, [onOff, time]);
+  }, [onOff]);
 
   const handleNewBoard = () => {
     if (onOff.display === "none") {
@@ -47,18 +47,6 @@ const Boards = (props) => {
 
     console.log(onOff.display);
   };
-
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-    console.log(time);
-
-
-    return () => clearInterval(interval);
-  }, []);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -75,7 +63,6 @@ const Boards = (props) => {
       },
     ]);
 
-    
     //attempting backend stuff
     fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards`, {
       method: "POST",
@@ -88,20 +75,14 @@ const Boards = (props) => {
         creator: formAuthor,
       }),
     })
-      .then((response) => response.json().then(props.handleAll()))
-      .then((data) => props.handleAll())
+      .then((response) => response.json())
+      .then((data) => console.log(data))
       .catch((error) => console.error(error));
 
     setBoardIndex(boardIndex + 1);
     console.log("Title: " + boards[0]);
     setOnOff({ display: "none" });
     props.setGetter(props.getter + 1); //passed from App to cause refresh
-
-    setTimeout(async () => {
-      props.setGetter(props.getter + 1); //passed from App to cause refresh
-      props.handleAll();
-      window.location.reload();
-    }, 500);
   };
 
   const exit = () => {
@@ -135,7 +116,7 @@ const Boards = (props) => {
       method: "DELETE",
     })
       .then((response) => response.json())
-      .then((data) => props.handleAll())//REPLACE CONSOLE LOG WITH PROPPED FETCH
+      .then((data) => console.log(data))//REPLACE CONSOLE LOG WITH PROPPED FETCH
       .catch((error) => console.error(error));
   };
 

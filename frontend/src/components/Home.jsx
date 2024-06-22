@@ -17,7 +17,6 @@ function Home(props) {
   const handleAll = () => {
     console.log("All");
     setFilter("All");
-    
 
 
     fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards`)
@@ -37,20 +36,6 @@ function Home(props) {
 
 
   }
-
-
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     console.log('call');
-  //     handleAll();
-  //   }, 1000);
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
-
-
   const handleRecent = () => { //ask about the recent page and how it is different from the others!
     console.log("Recent");
     setFilter("Recent");
