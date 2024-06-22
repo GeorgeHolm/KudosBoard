@@ -63,6 +63,7 @@ const Boards = (props) => {
       },
     ]);
 
+    
     //attempting backend stuff
     fetch(`${import.meta.env.VITE_BACKEND_LINK}/boards`, {
       method: "POST",
@@ -75,7 +76,7 @@ const Boards = (props) => {
         creator: formAuthor,
       }),
     })
-      .then((response) => response.json().then(props.handleAll))
+      .then((response) => response.json().then(props.handleAll()))
       .then((data) => props.handleAll())
       .catch((error) => console.error(error));
 
@@ -83,6 +84,11 @@ const Boards = (props) => {
     console.log("Title: " + boards[0]);
     setOnOff({ display: "none" });
     props.setGetter(props.getter + 1); //passed from App to cause refresh
+
+    setTimeout(() => {
+      props.setGetter(props.getter + 1); //passed from App to cause refresh
+      props.handleAll()
+    }, 2000);
   };
 
   const exit = () => {
