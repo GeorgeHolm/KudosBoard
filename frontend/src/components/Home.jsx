@@ -40,15 +40,15 @@ function Home(props) {
 
 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      console.log('call');
-      handleAll();
-    }, 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     console.log('call');
+  //     handleAll();
+  //   }, 1000);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
 
   const handleRecent = () => { //ask about the recent page and how it is different from the others!
