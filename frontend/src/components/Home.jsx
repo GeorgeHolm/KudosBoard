@@ -122,7 +122,7 @@ function Home(props) {
           </div>
         </header>
         <main>
-          <Boards getter={props.getter} setGetter={props.setGetter} appBoards={props.appBoards} filter={filter} search={searchInput} viewBoard={viewBoard}/>
+          <Boards handle={handleAll} getter={props.getter} setGetter={props.setGetter} appBoards={props.appBoards} filter={filter} search={searchInput} viewBoard={viewBoard}/>
         </main>
         <footer>
           <span>
