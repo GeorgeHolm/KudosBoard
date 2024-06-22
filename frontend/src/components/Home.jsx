@@ -37,6 +37,19 @@ function Home(props) {
 
 
   }
+
+
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    handleAll();
+
+    return () => clearInterval(interval);
+  }, []);
   const handleRecent = () => { //ask about the recent page and how it is different from the others!
     console.log("Recent");
     setFilter("Recent");
